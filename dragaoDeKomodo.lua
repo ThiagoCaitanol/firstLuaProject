@@ -10,8 +10,8 @@ local emoji = "🐉"
 local attackAtribute = 10
 local defenseAtribute = 10
 local lifeAttribute = 10
-local speedAttribute = 9
-local inteligenceAttribute = 10
+local speedAttribute = 10
+local inteligenceAttribute = 9
 
 -- Stats Bar
 local function getProgressBar(attribute)
@@ -31,6 +31,14 @@ local function getProgressBar(attribute)
 end
 
 -- Print terminal
+local function border()
+    print("==========================================================")
+end
+
+local function divider()
+    print("|")
+end
+
 local function showInfo(variable)
     print("| " .. variable)
 end
@@ -39,10 +47,17 @@ local function showTextInfo(text, variable)
     print("| " .. text .. " " .. variable)
 end
 
-print("==========================================================")
-print("|")
+
+border()
+divider()
 showInfo(monsterName)
 showInfo(description)
 showTextInfo("Emoji favorito:", emoji)
-print("|")
-print("==========================================================")
+divider()
+showTextInfo("ATQ:", getProgressBar(attackAtribute))
+showTextInfo("DEF:", getProgressBar(defenseAtribute))
+showTextInfo("LIF:", getProgressBar(lifeAttribute))
+showTextInfo("SPD:", getProgressBar(speedAttribute))
+showTextInfo("INT:", getProgressBar(inteligenceAttribute))
+divider()
+border()
