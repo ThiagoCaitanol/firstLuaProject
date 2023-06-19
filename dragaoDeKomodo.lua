@@ -1,16 +1,19 @@
 --Inicia o terminal com UTF8 assim aceitando emojis
 os.execute("chcp 65001")
 
-local monsterName = "CREEPER"
-local description = "Um monstro furtivo com temperamento explosivo."
-local emoji = "🧨"
+-- Monster
+local monsterName = "Dragão de Komodo"
+local description = "Um monstro blindado capaz de envenezar seus inimigos."
+local emoji = "🐉"
 
+-- Attributes
 local attackAtribute = 10
-local defenseAtribute = 1
-local lifeAttribute = 5
-local speedAttribute = 7
-local inteligenceAttribute = 2
+local defenseAtribute = 10
+local lifeAttribute = 10
+local speedAttribute = 9
+local inteligenceAttribute = 10
 
+-- Stats Bar
 local function getProgressBar(attribute)
     local fullChar = "■"
     local emptyChar = "□"
@@ -27,4 +30,19 @@ local function getProgressBar(attribute)
     return result
 end
 
-print("| " .. monsterName) 
+-- Print terminal
+local function showInfo(variable)
+    print("| " .. variable)
+end
+
+local function showTextInfo(text, variable)
+    print("| " .. text .. " " .. variable)
+end
+
+print("==========================================================")
+print("|")
+showInfo(monsterName)
+showInfo(description)
+showTextInfo("Emoji favorito:", emoji)
+print("|")
+print("==========================================================")
